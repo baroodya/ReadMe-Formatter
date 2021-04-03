@@ -115,7 +115,7 @@ def put_text(file_name: str, text: str):
     return
 
 
-# Press the green button in the gutter to run the script.
+# Create a readme from the text files in 'questions'.
 if __name__ == '__main__':
     create_block = readme_block.create_block
 
