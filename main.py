@@ -1,13 +1,17 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
 from typing import Union, List
 import readme_block
 import os
 
-
+# Split a string into blocks:
+# A 'block' is a set of contiguous lines. An empty line splits blocks:
+# This is block 1.
+# It has 2 lines.
+#
+# This is block 2.
+# It has 3 lines.
+# It has a smiley face :)
+#
+# If a line is only a spacer (i.e. only '\n') it is not included in either the above or below block.
 def split(file_name: str) -> List[str]:
     blocks = []
     text = get_text(file_name)
@@ -31,7 +35,13 @@ def split(file_name: str) -> List[str]:
         blocks.append(block)
     return blocks
 
-
+# Creates a ReadMe string from the list of questions.
+# Automatically adds:
+    # Name of the assignment,
+    # reminder not to include your name,
+    # num hours taken,
+    # honor code questions,
+    # commments/questions
 def create_readme(questions: List[str], assignment: str) -> str:
     result = ""
 
