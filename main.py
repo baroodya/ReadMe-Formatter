@@ -2,6 +2,7 @@ from typing import Union, List
 import readme_block
 import os
 
+
 # Split a string into blocks:
 # A 'block' is a set of contiguous lines. An empty line splits blocks:
 # This is block 1.
@@ -35,13 +36,14 @@ def split(file_name: str) -> List[str]:
         blocks.append(block)
     return blocks
 
+
 # Creates a ReadMe string from the list of questions.
 # Automatically adds:
-    # Name of the assignment,
-    # reminder not to include your name,
-    # num hours taken,
-    # honor code questions,
-    # commments/questions
+# Name of the assignment,
+# reminder not to include your name,
+# num hours taken,
+# honor code questions,
+# comments/questions
 def create_readme(questions: List[str], assignment: str) -> str:
     result = ""
 
@@ -124,7 +126,8 @@ if __name__ == '__main__':
     for filename in os.listdir(input_dir):
         if filename.endswith(".txt"):
             assignment = filename[:-4]
-        else: assignment = ""
+        else:
+            assignment = ""
 
         input_path_name = input_dir + "/" + filename
         output_path_name = output_dir + "/" + assignment + "Readme.txt"
